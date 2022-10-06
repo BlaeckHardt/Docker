@@ -2,68 +2,14 @@ Primero se abre docker Desktop y se verifica que esté conectado, despues se abr
 # Comandos de imagenes.
 El primer comando que veremos es ´docker images´, este comando nos devuelve un listado completo de todas las imagenes que hayamos descargado en la pc, si es la primera vez que lo usas la lista estará vacia:
 
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|             |            |          |          |          |
-
-Para descargar nuestra primera imagen usaremos el siguiente comando ´docker pull node´, las imagenes las descargaremos de [aqui](https://hub.docker.com/), vamos por ejemplo a node y especificamos la que queramos, por ejemplo ´18-alpine3.15´ o no escribimos nada y descargará la mas reciente.
-Ahora que ya está descargada ponemos nuevamente el comando ´docker images´ y tendremos mas o menos lo siguiente:
-
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|node|latest|35ffidf466e8|11 hours ago|991MB|
-
-Veamos ahora la descarga de otra manera, ponemos el comando ´docker pull node:18´, esto nos descarga node js version 18, lo ejecutamos y veremos que se ejecuta inmediatamente, si volvemos a poner el comando de ´docker images´ veremos lo siguiente:
-
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|node|18|35ffidf466e8|11 hours ago|991MB|
-|node|latest|35ffidf466e8|11 hours ago|991MB|
-
-Indicandonos que es la misma descarga, lo unico que cambia es la etiqueta.
-Si ahora ponemos el comando ´docker pull node:16´, esto nos descarga node js version 16, esta version tardará en descargarse y al ejecutar el comando ´docker images´ veremos lo siguiente:
-
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|node|16|7b887b0a0ccc|11 hours ago|853MB|
-|node|18|35ffidf466e8|11 hours ago|991MB|
-|node|latest|35ffidf466e8|11 hours ago|991MB|
-
-podemos ir a la [pagina](https://hub.docker.com/_/mysql) y dar clic al comando en negro que dice ´docker pull mysql´, lo pegamos en nuestra terminal y listo, al ejecutar el comando ´docker images´ veremos lo siguiente:
-
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|mysql|latest|43fcfca0776d|3 weeks ago|449MB|
-|node|16|7b887b0a0ccc|11 hours ago|853MB|
-|node|18|35ffidf466e8|11 hours ago|991MB|
-|node|latest|35ffidf466e8|11 hours ago|991MB|
-
-Si queremos eliminar imagenes pondremos el comando ´docker image rm node:16´, se pone el ´:16´ porque es la version que queremos eliminar dado que tenemos 3, al ejecutar el comando ´docker images´ veremos lo siguiente:
-
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|mysql|latest|43fcfca0776d|3 weeks ago|449MB|
-|node|18|35ffidf466e8|11 hours ago|991MB|
-|node|latest|35ffidf466e8|11 hours ago|991MB|
-
-Eliminamos el comando ´docker image rm node:18´, al ejecutar el comando ´docker images´ veremos lo siguiente:
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|mysql|latest|43fcfca0776d|3 weeks ago|449MB|
-|node|latest|35ffidf466e8|11 hours ago|991MB|
-
-Eliminamos finalmente todas las imagenes y nos quedamos con lo siguiente:
-
-|Repository|Tag|Image id|Created|Size|
-|:-----------:|:----------:|:--------:|:--------:|:--------:|
-|             |            |          |          |          |
-
-Todo lo anterior ejecutado se vaería así:
-
 <pre>
 C:\Users\ricar>docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+</pre>
 
+Para descargar nuestra primera imagen usaremos el siguiente comando ´docker pull node´, las imagenes las descargaremos de [aqui](https://hub.docker.com/), vamos por ejemplo a node y especificamos la que queramos, por ejemplo ´18-alpine3.15´ o no escribimos nada y descargará la mas reciente.
+
+<pre>
 C:\Users\ricar>docker pull node
 Using default tag: latest
 latest: Pulling from library/node
@@ -79,26 +25,49 @@ bf0ef0f2bfc7: Pull complete
 Digest: sha256:9d8a6466c6385e05f62f8ccf173e80209efb0ff4438f321f09ddf552b05af3ba
 Status: Downloaded newer image for node:latest
 docker.io/library/node:latest
+</pre>
 
-C:\Users\ricar>clear
-"clear" no se reconoce como un comando interno o externo,
-programa o archivo por lotes ejecutable.
+Ahora que ya está descargada ponemos nuevamente el comando ´docker images´ y tendremos mas o menos lo siguiente:
 
+<pre>
 C:\Users\ricar>docker images
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 node         latest    35ff1df466e8   11 hours ago   991MB
+</pre>
 
+Veamos ahora la descarga de otra manera, ponemos el comando ´docker pull node:18´, esto nos descarga node js version 18, lo ejecutamos y veremos que se ejecuta inmediatamente 
+
+<pre>
 C:\Users\ricar>docker pull node:18
 18: Pulling from library/node
 Digest: sha256:9d8a6466c6385e05f62f8ccf173e80209efb0ff4438f321f09ddf552b05af3ba
 Status: Downloaded newer image for node:18
 docker.io/library/node:18
+</pre>
 
+si volvemos a poner el comando de ´docker images´ veremos lo siguiente:
+
+<pre>
 C:\Users\ricar>docker images
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 node         18        35ff1df466e8   12 hours ago   991MB
 node         latest    35ff1df466e8   12 hours ago   991MB
+</pre>
 
+Indicandonos que es la misma descarga, lo unico que cambia es la etiqueta.
+Si ahora ponemos el comando ´docker pull node:16´, esto nos descarga node js version 16, esta version tardará en descargarse y al ejecutar el comando ´docker images´ veremos lo siguiente:
+
+<pre>
+C:\Users\ricar>docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+node         16        7b887b0a0ccc   12 hours ago   853MB
+node         18        35ff1df466e8   12 hours ago   991MB
+node         latest    35ff1df466e8   12 hours ago   991MB
+</pre>
+
+podemos ir a la [pagina](https://hub.docker.com/_/mysql) y dar clic al comando en negro que dice ´docker pull mysql´, lo pegamos en nuestra terminal y listo
+
+<pre>
 C:\Users\ricar>docker pull mysql
 Using default tag: latest
 latest: Pulling from library/mysql
@@ -116,35 +85,55 @@ d5358a7f7d07: Pull complete
 Digest: sha256:b9532b1edea72b6cee12d9f5a78547bd3812ea5db842566e17f8b33291ed2921
 Status: Downloaded newer image for mysql:latest
 docker.io/library/mysql:latest
+</pre>
 
+Al ejecutar el comando ´docker images´ veremos lo siguiente:
+
+<pre>
 C:\Users\ricar>docker images
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+node         16        7b887b0a0ccc   12 hours ago   853MB
 node         18        35ff1df466e8   12 hours ago   991MB
 node         latest    35ff1df466e8   12 hours ago   991MB
 mysql        latest    43fcfca0776d   3 weeks ago    449MB
+</pre>
 
-C:\Users\ricar>docker images
-REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
-node         18        35ff1df466e8   12 hours ago   991MB
-node         latest    35ff1df466e8   12 hours ago   991MB
-mysql        latest    43fcfca0776d   3 weeks ago    449MB
+Si queremos eliminar imagenes pondremos el comando ´docker image rm node:16´, se pone el ´:16´ porque es la version que queremos eliminar dado que tenemos 3
 
-C:\Users\ricar>docker images rm node:18
-"docker images" requires at most 1 argument.
-See 'docker images --help'.
-
-Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]
-
-List images
-
-C:\Users\ricar>docker image rm node:18
+<pre>
+C:\Users\ricar>docker image rm node:16
 Untagged: node:18
+</pre>
 
+Al ejecutar el comando ´docker images´ veremos lo siguiente:
+
+<pre>
+C:\Users\ricar>docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+node         18        35ff1df466e8   12 hours ago   991MB
+node         latest    35ff1df466e8   12 hours ago   991MB
+mysql        latest    43fcfca0776d   3 weeks ago    449MB
+</pre>
+
+Eliminamos el comando ´docker image rm node:18´
+
+<pre>
+C:\Users\ricar>docker image rm node:16
+Untagged: node:18
+</pre>
+
+Al ejecutar el comando ´docker images´ veremos lo siguiente:
+
+<pre>
 C:\Users\ricar>docker images
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 node         latest    35ff1df466e8   12 hours ago   991MB
 mysql        latest    43fcfca0776d   3 weeks ago    449MB
+</pre>
 
+Eliminamos finalmente todas las imagenes y nos quedamos con lo siguiente:
+
+<pre>
 C:\Users\ricar>docker image rm node
 Untagged: node:latest
 Untagged: node@sha256:9d8a6466c6385e05f62f8ccf173e80209efb0ff4438f321f09ddf552b05af3ba
@@ -181,6 +170,33 @@ Deleted: sha256:05dc728e5e49b5db657ec403b875f757afdd8d31f624eea76d706d6eee6395b2
 
 C:\Users\ricar>docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-
-C:\Users\ricar>
 </pre>
+
+# Comandos de contenedores
+
+Para crear un contenedor lo primero que haremos es una imagen, descargamos la imagen mas reciente de mongo con el comando ´docker pull mongo´, una vez descargado comenzamos con nuestro contenedor, escribimos ´docker create mongo´, mongo es el nombre de la imagen que usaremos como base para crear nuestro contenedor, nos devolvera un ID que es el identificador del contenedor que acabamos de crear, lo necesitaremos para ejecutar nuestro contenedor, lo copiamos ´417fce504889b8282125a1793b2d5ddaf60d536fcdc366f37625ca1629229d65´ 
+El comando ´docker create mongo´ es una manera mas facil de escribir el comando ´docker container create mongo´
+Para ejecutar nuestro contenedor escribimos el siguiente comando ´docker start 417fce504889b8282125a1793b2d5ddaf60d536fcdc366f37625ca1629229d65´, esto nos devolverá nuestro ID ´417fce504889b8282125a1793b2d5ddaf60d536fcdc366f37625ca1629229d65´, para verificar que nuestro contenedor está corriendo usaremos el siguiente comando ´docker ps´, esto nos devolverá lo siguiente:
+
+|Container ID|Image|Command|Created|Status|Ports|Names|
+|:-----------:|:----------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|417fce504889|mongo|"docker-entrypoint.s…"|7 minutes ago|Up 2 minutes|27017/tcp|awesome_montalcini|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
