@@ -184,5 +184,3 @@ REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
 
 C:\Users\ricar>
 </pre>
-
-# Comandos de contenedores
