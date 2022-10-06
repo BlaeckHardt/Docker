@@ -14,7 +14,7 @@
 |    6    | Matrices o Tablas |[Permalink()|
 |    7    | Cadenas |[Permalink]()|
 
-![Imamgem de um cheems promgramador trismte](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FWebadas%2Fcomments%2Fjeqwwv%2Fcheems_motivador%2F&psig=AOvVaw09JFWju9uiWx01cg3NBnd7&ust=1665174356952000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLiQ9YG4zPoCFQAAAAAdAAAAABAI)
+![Imamgem de um cheems promgramador trismte](https://external-preview.redd.it/BSk6ABBqB63tKSa6gJjM2f7LUC1NI-9vIFWAW_se9wA.png?format=pjpg&auto=webp&s=7eb8f8f86a4987d49e0972ad6ffa3d9e11202355)
 
 Algunas ideas para el archivo [markdown](https://github.com/jfasebook/SoyInformatico/blob/master/README.md)
 
