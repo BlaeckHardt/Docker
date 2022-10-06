@@ -7,8 +7,8 @@
 |Número de Proyecto|Nombre del proyecto|Permalink|
 |:----------------:|:-----------------:|:-------:|
 |    1    | Introducción - Docker |[Permalink]()|
-|    2    | Expresiones y operadores |[Permalink]()|
-|    3    | Condicionales |[Permalink]()|
+|    2    | Comandos de imagenes |[Permalink](https://github.com/BlaeckHardt/Docker/blob/a596560b23692cfa49784046e07b60265ff64787/Comandos%20de%20imagenes.md)|
+|    3    | Comandos de contenedores |[Permalink]()|
 |    4    | Bucles o ciclos |[Permalink()|
 |    5    | Arreglos |[Permalink]()|
 |    6    | Matrices o Tablas |[Permalink()|
