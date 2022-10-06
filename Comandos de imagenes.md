@@ -1,75 +1,20 @@
-# Docker
 
-## Contenedores
-
-Son una forma de empaquetar aplicaciones con todas las dependencias que este tenga incluyendo sus archivos de configuración, es como tener una caja en la que tendremos código en cualquier lenguaje que usemos, etc. Los contenedores son portables, es decir, faciles de compartir con otros desarrolladores y entre el equipo de operaciones volviendo el desarrolllo y despliegue de nuestras aplicaciones sea más fácil.
-
-## ¿Dónde se almacenan?
-
-Se almacenan en un repositorio de contenedores (como un github), estos pueden ser tanto públicos como privados, el repositorio público más conocido es [Docher Hub](https://hub.docker.com/) en donde encontraremos aplicaciones como:
-  * `Node JS`
-  * `Python`
-  * `MySQL`
-  * `Postgres`
-  * `Golang`
-  * Y distintas distribuciones de Linux
-
-## Trabajando con Contenedores
-
-El proceso al trabajar con contenedores es el siguiente:
-  * Descargar una imagen basada en Linux
-
-## Ventajas de usar contenedores
-
-Entre las principales ventajas de trabajar con contenedores está el permitir que desarrolladores y operadores trabajen en conjunto de construir una imagen.
-Pesan poco comparado con las máquinas virtuales (que pueden pesar GB en lugar de MB).
-
-## Imagen
-
-Es el empaquetado que contiene las dependencias y el código, siendo la imagen lo que se comparte y con la cual ejecutamos un comando que mantiene las dependencias corriendo en conjunto con su entorno, variables de entorno, entre otros. 
-
-## Container
-
-Un container son capas de imagenes, donde la capa más baja será por lo general una distribución de Linux siendo `Alpine Linux` la más utilizada (esto debido a que es considerablemente liviana). 
-
-## Virtualización
-
-Existen 3 tipos de virtualización:
-
-  * Paravistualización: trata de entregar la mayor cantidad de acceso por parte del sistema operativo anfitrion [por ejemplo Ubuntu] a los clientes [por ejemplo Ubuntu, Debian, Suse]
-  * Vitualización parcial: Donde algunos componentes del Hardware se  virtualizan para el sistema operativo cliente.
-  * Virtualización completa: Donde absolutamente todos los componentes o Hardware usado por el sistema operativo cliente son virtualizados de manera que los sistemas operativos cliente no acceden al Hardware.
-Docker es una forma de virtualización, usa el kernel del sistema operativo anfitrión traduciendose en que la imagen usa menos espacio, así como rendimiento muy superior a todas las alternativas de virtualización. Veamos la comparación entre una VM (Virtual Machine) contra Docker.
-
-Virtual Machine:
-
-  * Se compone de 3 capas:
-    * Su primera capa es al Hardware de donde se va a ejecutar
-    * Su segunda capa es el Kernel, el encargado de comunicarse con el Hardware
-    * Su tercera capa son las aplicaciones que estamos utilizando 
-  * Generalmente lo que tenemos visualizado son las aplicaciones y el kernel haciendo que nuestras imagenes pesen GB
-
-Docker
-
-  * Solo se visualiza la capa de aplicaciones
-  * Usa el kernel del sistema operativo en que se está ejecutando 
-
-## Para empezar a trabajar
-
-Descargamos e instalamos [Docker Desktop](https://www.docker.com/products/docker-desktop/) siguiendo todas las instrucciones, una vez instalado abrimos la aplicación y nos fijamos que esté conectado para poder empezar y una vez hecho esto procedemos a abrir la terminal `cmd` para ejecutar nuestros comandos.
-
-`hola`
-
-Primero se abre docker Desktop y se verifica que esté conectado, despues se abre la terminal (cmd) y ponemos nuestros primeros comandos.
 # Comandos de imagenes.
-El primer comando que veremos es ´docker images´, este comando nos devuelve un listado completo de todas las imagenes que hayamos descargado en la pc, si es la primera vez que lo usas la lista estará vacia:
+
+Los comandos que ejecutaremos son los siguientes:
+
+ * `docker images`
+ * `docker pull <node>`
+ * `docker image rm <node>`
+
+El primer comando que ejecutaremos es `docker images`, este comando nos devuelve un listado completo de todas las imagenes que hayamos descargado en la pc, si es la primera vez que lo usas la lista estará vacia:
 
 <pre>
 C:\Users\ricar>docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
 </pre>
 
-Para descargar nuestra primera imagen usaremos el siguiente comando `docker pull node`, las imagenes las descargaremos de [aqui](https://hub.docker.com/), vamos por ejemplo a node y especificamos la que queramos, por ejemplo ´18-alpine3.15´ o no escribimos nada y descargará la mas reciente.
+Para descargar nuestra primera imagen usaremos el siguiente comando `docker pull`, cabe mencionar que las imagenes las descargaremos son de [Docker Hub](https://hub.docker.com/), vamos por ejemplo a descargar `node` y especificamos la que queramos, por ejemplo `18-alpine3.15` o no escribimos nada y descargará la imagen más reciente.
 
 <pre>
 C:\Users\ricar>docker pull node
@@ -89,7 +34,7 @@ Status: Downloaded newer image for node:latest
 docker.io/library/node:latest
 </pre>
 
-Ahora que ya está descargada ponemos nuevamente el comando ´docker images´ y tendremos mas o menos lo siguiente:
+Ahora que ya está descargada nuestra imagen ponemos nuevamente el comando `docker images` y podremos visualizar la imagen que acabamos de descargar
 
 <pre>
 C:\Users\ricar>docker images
@@ -97,7 +42,7 @@ REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 node         latest    35ff1df466e8   11 hours ago   991MB
 </pre>
 
-Veamos ahora la descarga de otra manera, ponemos el comando ´docker pull node:18´, esto nos descarga node js version 18, lo ejecutamos y veremos que se ejecuta inmediatamente 
+Otra manera de descargar imagenes es insertando el comando `docker pull node:18`, esto nos descarga node js version 18, una vez lo ejecutamos veremos que se ejecuta inmediatamente, esto porque esta versión es la misma que la ultima versión
 
 <pre>
 C:\Users\ricar>docker pull node:18
@@ -107,7 +52,7 @@ Status: Downloaded newer image for node:18
 docker.io/library/node:18
 </pre>
 
-si volvemos a poner el comando de ´docker images´ veremos lo siguiente:
+Si volvemos a ingresar el comando de `docker images` veremos la misma descarga, pero con otra etiqueta
 
 <pre>
 C:\Users\ricar>docker images
@@ -116,8 +61,7 @@ node         18        35ff1df466e8   12 hours ago   991MB
 node         latest    35ff1df466e8   12 hours ago   991MB
 </pre>
 
-Indicandonos que es la misma descarga, lo unico que cambia es la etiqueta.
-Si ahora ponemos el comando ´docker pull node:16´, esto nos descarga node js version 16, esta version tardará en descargarse y al ejecutar el comando ´docker images´ veremos lo siguiente:
+Si ahora ponemos el comando `docker pull node:16` descargaremos node js version 16, esta version tardará en descargarse y al ejecutar el comando `docker images` nuevamente veremos lo siguiente:
 
 <pre>
 C:\Users\ricar>docker images
@@ -127,7 +71,7 @@ node         18        35ff1df466e8   12 hours ago   991MB
 node         latest    35ff1df466e8   12 hours ago   991MB
 </pre>
 
-podemos ir a la [pagina](https://hub.docker.com/_/mysql) y dar clic al comando en negro que dice ´docker pull mysql´, lo pegamos en nuestra terminal y listo
+Como ejemplo extra podemos ir a [Docker Hub](https://hub.docker.com/_/mysql) y dar clic al comando en negro que dice `docker pull mysql`, lo pegamos en nuestra terminal y tendremos la ultima version de `MySQL`
 
 <pre>
 C:\Users\ricar>docker pull mysql
@@ -149,7 +93,7 @@ Status: Downloaded newer image for mysql:latest
 docker.io/library/mysql:latest
 </pre>
 
-Al ejecutar el comando ´docker images´ veremos lo siguiente:
+Al ejecutar el comando `docker images` nuevamente veremos lo siguiente:
 
 <pre>
 C:\Users\ricar>docker images
@@ -160,14 +104,14 @@ node         latest    35ff1df466e8   12 hours ago   991MB
 mysql        latest    43fcfca0776d   3 weeks ago    449MB
 </pre>
 
-Si queremos eliminar imagenes pondremos el comando ´docker image rm node:16´, se pone el ´:16´ porque es la version que queremos eliminar dado que tenemos 3
+Si queremos eliminar imagenes pondremos el comando `docker image rm node:16`, se pone el `:16` porque es la version que queremos eliminar dado que tenemos 3 versiones distintas
 
 <pre>
 C:\Users\ricar>docker image rm node:16
 Untagged: node:18
 </pre>
 
-Al ejecutar el comando ´docker images´ veremos lo siguiente:
+Al ejecutar el comando `docker images` veremos que la versión 16 se ha eliminado
 
 <pre>
 C:\Users\ricar>docker images
@@ -177,14 +121,14 @@ node         latest    35ff1df466e8   12 hours ago   991MB
 mysql        latest    43fcfca0776d   3 weeks ago    449MB
 </pre>
 
-Eliminamos el comando ´docker image rm node:18´
+Eliminamos la versión 18 con el comando `docker image rm node:18`
 
 <pre>
 C:\Users\ricar>docker image rm node:16
 Untagged: node:18
 </pre>
 
-Al ejecutar el comando ´docker images´ veremos lo siguiente:
+Y al ejecutar el comando `docker images` veremos que la version 18 se ha desvanecido
 
 <pre>
 C:\Users\ricar>docker images
