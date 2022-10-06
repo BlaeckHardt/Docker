@@ -118,12 +118,14 @@ mango
 
 ## Mapeando puertos
 
-Para mapear puertos usaremos el comando `docker creat -p27017:27017` siendo el primero el puerto donde está instalado docker y el segundo el que mapearemos, despues podemos indicarle el nombre que queremos que tenga, nos devolverá un ID
+Para mapear puertos usaremos el comando `docker create -p27017:27017` siendo el primero el puerto donde está instalado docker y el segundo el que mapearemos, despues podemos indicarle el nombre que queremos que tenga, nos devolverá un ID
 
 <pre>
-
+C:\Users\ricar>docker create -p27017:27017 --name mango mongo
+10e6a6b1c06a3ff60710c652296394f32218969996d994815e62817be98ad633
 </pre>
 
+Ingresamos el comando `docker ps` para visualizar el puerto 
 
 <pre>
 
