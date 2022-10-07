@@ -11,6 +11,7 @@ En estr apartado veremos los siguientes comandos:
   * `docker logs <nombre>`
   * `docker logs --follow <nombre>`
   * `docker run <nombre>`
+  * `docker run -d <nombre>`
 
 Para crear un contenedor lo primero que haremos es una imagen, para ello descargamos la imagen mas reciente de mongo (por ejemplo) con el comando `docker pull mongo`
 
