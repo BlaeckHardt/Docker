@@ -16,8 +16,15 @@ Se almacenan en un repositorio de contenedores (como un github), estos pueden se
 
 ## Trabajando con Contenedores
 
-El proceso al trabajar con contenedores es el siguiente:
+El proceso al trabajar con contenedores es el siguiente: (por cada contenedor)
   * Descargar una imagen basada en Linux
+  * Crear una red
+  * Crear el contenedor
+    * Asignar puertos
+    * Asignar nombres 
+    * Asignar varianles de entorno
+    * Especificar la red
+    * Indicar la imagen: con su etiqueta
 
 ## Ventajas de usar contenedores
 
