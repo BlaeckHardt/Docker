@@ -14,7 +14,8 @@
 |    6    | Volumenes |[Permalink](https://github.com/BlaeckHardt/Docker/blob/2376b9f1859d0fe4bc3907e85e4389a204ba7045/Volumenes.md)|
 |    7    | Ambientes y Hot Reload |[Permalink](https://github.com/BlaeckHardt/Docker/blob/2ace3451d41c05c76de1f54941baecf54230386f/Ambientes%20y%20Hot%20Reload.md)|
 
-![Imamgem de um cheems promgramador trismte](https://external-preview.redd.it/BSk6ABBqB63tKSa6gJjM2f7LUC1NI-9vIFWAW_se9wA.png?format=pjpg&auto=webp&s=7eb8f8f86a4987d49e0972ad6ffa3d9e11202355)
+<h3 align="center"><img src="https://external-preview.redd.it/BSk6ABBqB63tKSa6gJjM2f7LUC1NI-9vIFWAW_se9wA.png?format=pjpg&auto=webp&s=7eb8f8f86a4987d49e0972ad6ffa3d9e11202355" alt="python" width="400" height="400"/>
 
-Algunas ideas para el archivo [markdown](https://github.com/jfasebook/SoyInformatico/blob/master/README.md) un [extra](https://www.youtube.com/watch?v=4Dko5W96WHg&list=WL&index=15&t=2771s)
+Algunas ideas para el archivo [markdown](https://github.com/jfasebook/SoyInformatico/blob/master/README.md) (.md) y [extra](https://rahuldkjain.github.io/gh-profile-readme-generator/)
 
+</h3>
